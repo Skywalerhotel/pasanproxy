@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/player.css">
+</head>
+<body>
+<div class="player">
+<video id="video">
+<source src="/proxy?url={{url}}">
+</video>
+<div class="controls">
+<button id="play">▶</button>
+<button onclick="seek(-10)">⏪</button>
+<button onclick="seek(10)">⏩</button>
+<button onclick="toggleFullscreen()">⛶</button>
+<button onclick="toggleSettings()">⚙</button>
+</div>
+<div class="settings" id="settings">
+Audio
+<select id="audio"></select>
+Subtitle
+<select id="subs"></select>
+Speed
+<select id="speed">
+<option>0.5</option>
+<option selected>1</option>
+<option>1.5</option>
+<option>2</option>
+</select>
+Subtitle file
+<input type="file" id="srt">
+</div>
+</div>
+<script>
+const VIDEO_URL="{{url}}"
+</script>
+<script src="/static/player.js"></script>
+</body>
+</html>
